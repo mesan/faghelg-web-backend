@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaghelgWebBackend", "FaghelgWebBackend\FaghelgWebBackend.csproj", "{020EF001-0F41-4213-9E8C-CE83B3B11CAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaghelgWebBackend.Tests", "FaghelgWebBackend.Tests\FaghelgWebBackend.Tests.csproj", "{5EAB42FF-83C0-4507-A690-C7FCDBA694F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{020EF001-0F41-4213-9E8C-CE83B3B11CAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{020EF001-0F41-4213-9E8C-CE83B3B11CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{020EF001-0F41-4213-9E8C-CE83B3B11CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{020EF001-0F41-4213-9E8C-CE83B3B11CAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EAB42FF-83C0-4507-A690-C7FCDBA694F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EAB42FF-83C0-4507-A690-C7FCDBA694F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EAB42FF-83C0-4507-A690-C7FCDBA694F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EAB42FF-83C0-4507-A690-C7FCDBA694F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
