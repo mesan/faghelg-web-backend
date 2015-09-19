@@ -32,5 +32,16 @@ namespace FaghelgWebBackend.Properties {
                 return ((string)(this["DevStorage"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("DefaultEndpointsProtocol=https;AccountName=faghelgweb;AccountKey=TE5xuCRCvF30gkSp" +
+            "nLxJ3F5UO2aXvev+4rdsUmx8v2C/Y+/rrcfRhyedHj0xdKdqeD9c/UMQ+68jQ7UbbEguUQ==")]
+        public string AzureStorage {
+            get {
+                return ((string)(this["AzureStorage"]));
+            }
+        }
     }
 }
