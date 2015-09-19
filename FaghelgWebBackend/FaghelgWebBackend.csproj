@@ -202,9 +202,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
@@ -251,8 +249,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
-    <Compile Include="Services\MessageInterchangeController.cs" />
+    <Compile Include="Controllers\MessageInterchangeController.cs" />
     <Compile Include="Services\MessageService.cs" />
     <Compile Include="Services\MobileBackendApiService.cs" />
     <Compile Include="Startup.cs" />
