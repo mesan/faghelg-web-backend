@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FaghelgWebBackend.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,9 +11,9 @@ namespace FaghelgWebBackend.Controllers
     public class MessageController : ApiController
     {
         // GET: api/Message
-        public IEnumerable<string> Get()
+        public IList<Message> Get()
         {
-            return new string[] { "value1", "value2" };
+            return null;
         }
 
         // GET: api/Message/5
@@ -22,17 +23,7 @@ namespace FaghelgWebBackend.Controllers
         }
 
         // POST: api/Message
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT: api/Message/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Message/5
-        public void Delete(int id)
+        public void Post(Message messsage)
         {
         }
     }
