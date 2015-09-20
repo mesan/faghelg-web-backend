@@ -1,4 +1,5 @@
 ﻿using FaghelgWebBackend.Models;
+using FaghelgWebBackend.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,21 +11,23 @@ namespace FaghelgWebBackend.Controllers
 {
     public class MessageController : ApiController
     {
-        // GET: api/Message
-        public IList<Message> Get()
+        private MessageService _messageService;
+
+        MessageController()
         {
-            return null;
+            _messageService = new MessageService();
         }
 
         // GET: api/Message/5
-        public string Get(int id)
+        public Message Get(Guid id)
         {
-            return "value";
+            return _messageService.getMessage(id);
         }
 
         // POST: api/Message
         public void Post(Message messsage)
         {
+            _messageService.storeMessage(messsage);
         }
     }
 }
