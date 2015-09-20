@@ -10,10 +10,19 @@ namespace FaghelgWebBackend.Services
 {
     public class MessageInterchangeController : ApiController
     {
+
+        private MessageService messageService;
+
+        MessageInterchangeController()
+        {
+            messageService = new MessageService();
+        }
+
+
         // POST: api/MessageInterchange
         public void Post(Message message)
         {
-
+            messageService.storeAndEmitMessage(message);
         }
     }
 }

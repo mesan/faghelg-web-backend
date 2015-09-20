@@ -11,23 +11,23 @@ namespace FaghelgWebBackend.Controllers
 {
     public class MessageController : ApiController
     {
-        private MessageService _messageService;
+        private MessageService messageService;
 
         MessageController()
         {
-            _messageService = new MessageService();
+            messageService = new MessageService();
         }
 
         // GET: api/Message/5
         public Message Get(Guid id)
         {
-            return _messageService.getMessage(id);
+            return messageService.getMessage(id);
         }
 
         // POST: api/Message
         public void Post(Message messsage)
         {
-            _messageService.storeMessage(messsage);
+            messageService.storeAndEmitMessage(messsage);
         }
     }
 }
