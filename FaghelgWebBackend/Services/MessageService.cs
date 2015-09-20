@@ -31,14 +31,26 @@ namespace FaghelgWebBackend.Services
                 .Single();
         }
 
-        public void storeMessage(Message message)
+        public void storeAndEmitMessage(Message message)
+        {
+
+            emitMessage(message);
+            storeMessage(message);
+
+        }
+
+        public void storeAndBroadcastMessage(Message message)
+        {
+
+            broadcastMessage(message);
+            storeMessage(message);
+
+        }
+        private void storeMessage(Message message)
         {
             message.setPartitionKey();
-
             TableOperation insertOp = TableOperation.Insert(message);
-
             table.Execute(insertOp);
-
         }
 
         public IList<Message> getMessagesToUser(Guid userId)
@@ -48,6 +60,16 @@ namespace FaghelgWebBackend.Services
             return table.ExecuteQuery(getAllQuery)
                 .Where(m => m.receiver == userId)
                 .ToList();
+        }
+
+        private void emitMessage (Message message)
+        {
+
+        }
+
+        private void broadcastMessage(Message message)
+        {
+
         }
     }
 }
