@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using System.Web;
 
 namespace FaghelgWebBackend.Services
 {
@@ -34,6 +33,8 @@ namespace FaghelgWebBackend.Services
 
         public void storeMessage(Message message)
         {
+            message.setPartitionKey();
+
             TableOperation insertOp = TableOperation.Insert(message);
 
             table.Execute(insertOp);

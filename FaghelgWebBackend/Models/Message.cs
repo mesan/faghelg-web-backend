@@ -1,4 +1,5 @@
-﻿using Microsoft.WindowsAzure.Storage.Table;
+﻿using FaghelgWebBackend.Exceptions;
+using Microsoft.WindowsAzure.Storage.Table;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,16 +13,33 @@ namespace FaghelgWebBackend.Models
         public Guid receiver { get; set; }
         public string body { get; set; }
 
-        public Message() { }
+        public Message() {
+            RowKey = Guid.NewGuid().ToString();
+        }
 
         public Message(Guid sender, Guid receiver, string body)
         {
             this.sender = sender;
             this.receiver = receiver;
             this.body = body;
-            RowKey = new Guid().ToString();
-            PartitionKey = receiver.ToString();
+            RowKey = Guid.NewGuid().ToString();
+            setPartitionKey();
         }
 
+        public void setPartitionKey()
+        {
+            var leftByteArray = sender.ToByteArray();
+            var rightByteArray = receiver.ToByteArray();
+
+
+            if (leftByteArray.Length != rightByteArray.Length)
+                throw new IllegalLengthsInXorOperationException();
+
+            PartitionKey =  String.Join(string.Empty, 
+                (leftByteArray
+                    .Select((b, i) => b ^ rightByteArray[i])
+                    .ToArray()));
+
+        }
     }
 }
