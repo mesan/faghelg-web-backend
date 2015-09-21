@@ -16,6 +16,7 @@ namespace FaghelgWebBackend
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuthentication(app);
+            
         }
 
         public void ConfigureAuthentication(IAppBuilder app)
