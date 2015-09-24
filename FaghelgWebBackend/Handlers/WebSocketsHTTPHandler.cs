@@ -2,7 +2,7 @@
 using System;
 using System.Web;
 
-namespace FaghelgWebSocket.Handlers
+namespace FaghelgWebBackend.Handlers
 {
     public class WebSocketsHTTPHandler : IHttpHandler
     {
