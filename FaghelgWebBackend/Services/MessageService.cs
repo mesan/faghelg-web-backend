@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using FaghelgWebBackend.Mappers;
 
 namespace FaghelgWebBackend.Services
 {
@@ -13,8 +14,12 @@ namespace FaghelgWebBackend.Services
     {
         private CloudTable table;
 
+        private MobileBackendApiService mobileBackendApiService;
+
         public MessageService()
         {
+            mobileBackendApiService = new MobileBackendApiService();
+
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
                     ConfigurationManager.ConnectionStrings["AzureStorage"].ConnectionString);
 
@@ -40,13 +45,13 @@ namespace FaghelgWebBackend.Services
 
         }
 
-        public void storeAndBroadcastMessage(Message message)
+        public void storeEmitAndBroadcastMessage(Message message)
         {
-
             broadcastMessage(message);
             storeMessage(message);
-
+            emitMessage(message);
         }
+
         private void storeMessage(Message message)
         {
             message.setPartitionKey();
@@ -65,12 +70,13 @@ namespace FaghelgWebBackend.Services
 
         private void emitMessage (Message message)
         {
-            FaghelgWebsocketHandler.getClients().Broadcast(message.RowKey);
+            FaghelgWebsocketHandler.broadcastMessage(
+                new MessageToEventMapper().map(message));
         }
 
         private void broadcastMessage(Message message)
         {
-            
+            mobileBackendApiService.pushMessage(message);
         }
     }
 }
