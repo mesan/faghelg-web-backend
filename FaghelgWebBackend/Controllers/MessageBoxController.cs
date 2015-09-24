@@ -21,7 +21,7 @@ namespace FaghelgWebBackend.Controllers
         public IEnumerable<Message> Get(Guid id)
         {
             return messageService.getMessagesToUser(id);
+
         }
-        
     }
 }

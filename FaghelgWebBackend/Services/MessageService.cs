@@ -65,12 +65,12 @@ namespace FaghelgWebBackend.Services
 
         private void emitMessage (Message message)
         {
-
+            FaghelgWebsocketHandler.getClients().Broadcast(message.RowKey);
         }
 
         private void broadcastMessage(Message message)
         {
-            FaghelgWebsocketHandler.getClients().Broadcast(message.RowKey);
+            
         }
     }
 }
