@@ -4,7 +4,8 @@
 
 # Project-specific files
 ConnectionStrings.config
-
+FaghelgWeb.pubxml
+FaghelgWeb.pubxml.user
 
 # User-specific files
 *.suo

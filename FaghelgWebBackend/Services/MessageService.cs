@@ -1,4 +1,5 @@
 ﻿using FaghelgWebBackend.Models;
+using FaghelgWebBackend.Handlers;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 using System;
@@ -64,12 +65,12 @@ namespace FaghelgWebBackend.Services
 
         private void emitMessage (Message message)
         {
-
+            FaghelgWebsocketHandler.getClients().Broadcast(message.RowKey);
         }
 
         private void broadcastMessage(Message message)
         {
-
+            
         }
     }
 }
