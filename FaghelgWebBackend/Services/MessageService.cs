@@ -54,16 +54,7 @@ namespace FaghelgWebBackend.Services
             table.Execute(insertOp);
         }
 
-        public IList<Message> getMessagesToUser(Guid userId)
-        {
-            TableQuery<Message> getAllQuery = new TableQuery<Message>();
-
-            return table.ExecuteQuery(getAllQuery)
-                .Where(m => m.receiver == userId)
-                .ToList();
-        }
-
-        private void emitMessage (Message message)
+         private void emitMessage (Message message)
         {
             FaghelgWebsocketHandler.getClients().Broadcast(message.RowKey);
         }

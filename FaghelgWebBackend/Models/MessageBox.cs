@@ -8,9 +8,9 @@ namespace FaghelgWebBackend.Models
 {
     public class MessageBox
     {
-        Guid owner { get; set; }
-        IEnumerable messages { get; set; }
-        int messageCount { get; set; }
-        int pages { get; set; }
+        public Guid owner { get; set; }
+        public IEnumerable messages { get; set; }
+        public int messageCount { get; set; }
+        public int pages { get; set; }
     }
 }

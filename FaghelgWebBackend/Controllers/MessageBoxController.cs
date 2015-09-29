@@ -9,19 +9,21 @@ namespace FaghelgWebBackend.Controllers
     public class MessageBoxController : ApiController
     {
 
-        private MessageService messageService;
+        private MessageBoxService messageBoxService;
 
 
         MessageBoxController()
         {
-            messageService = new MessageService();
+            messageBoxService = new MessageBoxService();
         }
 
         // GET: api/MessageBox
-        public IEnumerable<Message> Get(Guid id)
+        public MessageBox Get(Guid id)
         {
-            return messageService.getMessagesToUser(id);
+            return messageBoxService.getBoxByUserId(id);
 
         }
+
+
     }
 }
