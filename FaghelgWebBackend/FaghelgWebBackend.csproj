@@ -248,11 +248,8 @@
     <Compile Include="Mappers\MessageToEventMapper.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Message.cs" />
-<<<<<<< HEAD
     <Compile Include="Models\MessageBox.cs" />
-=======
     <Compile Include="Models\Types\EventType.cs" />
->>>>>>> b2d2d8552f3def8ccf3345b6a543934e524c19bd
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
