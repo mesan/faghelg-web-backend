@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Newtonsoft.Json;
 
 namespace FaghelgWebBackend.Handlers
 {
@@ -11,14 +12,9 @@ namespace FaghelgWebBackend.Handlers
 
         private static WebSocketCollection clients = new WebSocketCollection();
 
-        public static WebSocketCollection getClients()
+        public static void broadcastMessage(object message)
         {
-            return clients;
-        }
-
-        public void broadcastMessage(string message)
-        {
-            clients.Broadcast(message);
+            clients.Broadcast(JsonConvert.SerializeObject(message));
         }
 
         public override void OnOpen()

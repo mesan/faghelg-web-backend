@@ -27,7 +27,7 @@ namespace FaghelgWebBackend.Controllers
         // POST: api/Message
         public void Post(Message messsage)
         {
-            messageService.storeAndEmitMessage(messsage);
+            messageService.storeEmitAndBroadcastMessage(messsage);
         }
     }
 }
